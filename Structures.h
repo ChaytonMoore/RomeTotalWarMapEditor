@@ -25,6 +25,14 @@ enum TerrainType
   wilderness  
 };
 
+enum TileFeature
+{
+  non,
+  river,
+  ford,
+  cliff
+};
+
 enum ClimateType
 {
   mediterranean,
@@ -57,13 +65,15 @@ struct ProvinceStruct
 //This is compiled from a all the data from the various different maps
 struct DataRichStruct
 {
-  int height;
-  int rough;
-  WaterData water;
-  TerrainType terrain;
-  ClimateType climate;
+  
+  int height[4]; //4 long because there a 4 sub files. top right, top left, bottom right then bottom left is the order
+  int rough[4];
+  WaterData water[4];
+  TerrainType terrain[4];
+  ClimateType climate[4];
   ProvinceStruct* Province;
   bool City,Port;
+  
 };
 
 struct MapRow
