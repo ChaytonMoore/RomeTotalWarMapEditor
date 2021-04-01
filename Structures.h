@@ -58,6 +58,7 @@ struct ProvinceStruct
 struct DataRichStruct
 {
   int height;
+  int rough;
   WaterData water;
   TerrainType terrain;
   ClimateType climate;
